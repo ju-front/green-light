@@ -1,6 +1,6 @@
 import React from "react";
 import './AllergySelectPage.css'
-import '../App.css'
+import '../global.css'
 
 const AllergySelectPage = () => {
   return(

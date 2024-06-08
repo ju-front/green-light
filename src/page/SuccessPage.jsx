@@ -1,6 +1,6 @@
 import React from "react";
 import './SuccessPage.css'
-import '../App.css'
+import '../global.css'
 
 const SuccessPage = () => {
   return(

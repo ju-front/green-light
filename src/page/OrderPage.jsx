@@ -1,6 +1,6 @@
 import React from "react";
 import './OrderPage.css'
-import '../App.css'
+import '../global.css'
 
 const OrderPage = () => {
   return(

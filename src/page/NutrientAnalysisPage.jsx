@@ -1,6 +1,6 @@
 import React from "react";
 import './NutrientAnalysisPage.css'
-import '../App.css'
+import '../global.css'
 
 const NutrientAnalysisPage = () => {
   return(

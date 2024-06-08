@@ -1,6 +1,6 @@
 import React from "react";
 import './WelcomePage.css'
-import '../App.css'
+import '../global.css'
 
 const WelcomePage = () => {
   return(
