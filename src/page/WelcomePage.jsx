@@ -2,8 +2,13 @@ import React from "react";
 import './WelcomePage.css'
 import '../global.css'
 import {MarginVertical} from "../component";
+import {useNavigate} from "react-router-dom";
 
 const WelcomePage = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/allergy-select");
+  }
   return(
     <div className="container">
       <div className="sub-container">
@@ -12,7 +17,7 @@ const WelcomePage = () => {
         <div className="title">G-Order</div>
         <MarginVertical value={100} />
         <div style={{display: "flex", justifyContent: "center"}}>
-          <div className="start-button" onClick={null}>시작하기</div>
+          <div className="start-button" onClick={handleClick}>시작하기</div>
         </div>
       </div>
     </div>
