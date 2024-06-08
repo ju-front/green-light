@@ -1,0 +1,36 @@
+.sub-title{
+    font-size: 21px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.title{
+    font-size: 90px;
+    text-align: center;
+    font-weight: bold;
+    color: #00FF00;
+}
+
+.start-button{
+    color: white;
+    font-weight: bold;
+    font-size: 27px;
+    text-align: center;
+    background-color: #F13131;
+    width: 216px;
+    height: 71px;
+    line-height: 71px;
+    border-radius: 31px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.start-button:hover {
+    background-color: #D12B2B;
+}
+
+.start-button:active {
+    background-color: #B12424;
+    transform: scale(0.94);
+}
