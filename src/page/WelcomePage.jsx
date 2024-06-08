@@ -1,10 +1,13 @@
 import React from "react";
 import './WelcomePage.css'
+import '../App.css'
 
 const WelcomePage = () => {
   return(
     <div className="container">
-      <h1>Welcome Page</h1>
+      <div className="sub-container">
+        {/*{여기부터 태그를 작성해주세요}*/}
+      </div>
     </div>
   )
 }
