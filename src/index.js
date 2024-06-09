@@ -11,6 +11,7 @@ import SuccessPage from "./page/SuccessPage";
 import OrderPage from "./page/OrderPage";
 import NutrientAnalysisPage from "./page/NutrientAnalysisPage";
 import AllergySelectPage from "./page/AllergySelectPage";
+import BackApp from "./backend/BackApp";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
   {
     path: "/allergy-select",
     element: <AllergySelectPage />,
+  },
+  {
+    path: "/backApp",
+    element: <BackApp />,
+  },
+  {
+    path: "*",
+    element: <div>404</div>,
   },
 ]);
 
