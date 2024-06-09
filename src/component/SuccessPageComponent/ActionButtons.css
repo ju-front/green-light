@@ -1,0 +1,32 @@
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cancel-button,
+.confirm-button {
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: red; /* 건너뛰기 버튼 색상 변경 */
+}
+
+.confirm-button {
+  background-color: green; /* 회원가입 버튼 색상 변경 */
+}
+
+.cancel-button:hover {
+  background-color: rgb(93, 30, 30);
+}
+
+.confirm-button:hover {
+  background-color: darkgreen;
+}
