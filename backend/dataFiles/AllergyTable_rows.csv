@@ -1,0 +1,14 @@
+id,created_at,gluten,dairy,egg,shellfish,nut,soy,fish,celery,mustard
+1,2024-06-09 07:10:59.550515+00,true,false,false,false,false,false,false,false,false
+2,2024-06-09 07:10:59.550515+00,false,true,false,false,false,false,false,false,false
+3,2024-06-09 07:10:59.550515+00,true,true,false,false,false,false,false,false,true
+4,2024-06-09 07:10:59.550515+00,true,true,false,false,false,false,false,false,false
+5,2024-06-09 07:10:59.550515+00,true,true,false,false,false,true,false,false,false
+6,2024-06-09 07:10:59.550515+00,true,false,false,false,false,false,false,false,false
+7,2024-06-09 07:10:59.550515+00,true,true,false,false,true,false,true,false,false
+8,2024-06-09 07:10:59.550515+00,false,true,false,true,false,false,false,false,false
+9,2024-06-09 07:10:59.550515+00,true,false,false,false,false,false,false,false,false
+10,2024-06-09 07:10:59.550515+00,true,false,false,false,false,false,false,true,false
+11,2024-06-09 07:10:59.550515+00,false,true,true,false,false,true,false,false,false
+12,2024-06-09 07:10:59.550515+00,false,true,false,false,false,false,false,false,false
+13,2024-06-09 07:10:59.550515+00,false,false,false,false,false,false,false,false,false

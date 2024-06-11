@@ -1,0 +1,2 @@
+id,created_at,gluten,dairy,egg,shellfish,nut,soy,fish,celery,mustard,coupon,userID
+1,2024-06-09 06:57:12.731325+00,false,false,false,false,false,false,false,false,false,0,abc123
