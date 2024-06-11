@@ -12,8 +12,8 @@ import OrderPage from "./page/OrderPage";
 import NutrientAnalysisPage from "./page/NutrientAnalysisPage";
 import AllergySelectPage from "./page/AllergySelectPage";
 import {DataProvider} from "./context/DataContext";
-import BackApp from './controller/BackApp'
 
+import BackApp from './controller/BackApp';
 
 const router = createBrowserRouter([
   {
