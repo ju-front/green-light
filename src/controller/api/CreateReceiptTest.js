@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateReceipt from './CreateReceipt';
 
-function CreateReceiptForm() {
+function CreateReceiptTest() {
   const handleOrder = async () => {
     const order = {
       items: [
@@ -9,7 +9,6 @@ function CreateReceiptForm() {
         { name: "gelato", quantity: 1 },
         { name: "panna_cotta", quantity: 3 },
         { name: "bruschetta", quantity: 3 }
-
       ],
       total: 26000
     };
@@ -23,11 +22,11 @@ function CreateReceiptForm() {
   };
 
   return (
-    <div className="CreateReceiptForm">
+    <div className="CreateReceiptTest">
       <h1>Order System</h1>
       <button onClick={handleOrder}>Place Order</button>
     </div>
   );
 }
 
-export default CreateReceiptForm;
+export default CreateReceiptTest;
