@@ -1,0 +1,10 @@
+.custom-button {
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,18 @@
+.custom-textfield {
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.custom-textfield.small {
+  height: 30px;
+}
+
+.custom-textfield.medium {
+  height: 40px;
+}
+
+.custom-textfield.large {
+  height: 50px;
+}
