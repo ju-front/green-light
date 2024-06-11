@@ -10,14 +10,14 @@ const CustomButton = ({ text, size = "medium", color, onClick }) => {
       height: "30px",
     },
     medium: {
-      fontSize: "16px",
-      width: "100px",
-      height: "40px",
-    },
-    large: {
       fontSize: "20px",
       width: "120px",
       height: "50px",
+    },
+    large: {
+      fontSize: "27px",
+      width: "210px",
+      height: "70px",
     },
   };
 

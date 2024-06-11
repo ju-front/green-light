@@ -1,10 +1,20 @@
 .custom-button {
   border: none;
-  border-radius: 5px;
+  border-radius: 31px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: white;
   font-weight: bold;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.custom-button:hover {
+  background-color: #d12b2b;
+}
+
+.custom-button:active {
+  background-color: #b12424;
+  transform: scale(0.94);
 }

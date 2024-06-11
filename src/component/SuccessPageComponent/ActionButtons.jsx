@@ -19,13 +19,13 @@ const ActionButtons = () => {
     <div className='action-buttons'>
       <CustomButton
         text='취소'
-        size='large'
+        size='medium'
         color='red'
         onClick={ActionButtonsClickCancel}
       />
       <CustomButton
         text='회원가입'
-        size='large'
+        size='medium'
         color='green'
         onClick={ActionButtonsClickJoin}
       />
