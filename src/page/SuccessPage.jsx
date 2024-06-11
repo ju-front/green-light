@@ -23,11 +23,11 @@ const SuccessPage = () => {
 
     // 페이지 접근 시 비동기로 supabase order data를 받아오는 로직 추가 필요
   };
-
   // 임시 user point data 이것도 supabase로 받아와야 함
   let userPoint = 13;
 
   const handleArrowClick = () => {
+    //로그인 시 변경 필요
     setShowPointStatus(true);
   };
 
