@@ -1,7 +1,7 @@
-import { supabase } from './supabaseClient';
+import { supabase } from '../supabaseClient';
 
 // 사용자 ID를 확인하고 알러지 값을 조회하는 함수
-async function signIn(userID) { //userID: 사용자가 입력한 id
+async function SignIn(userID) { //userID: 사용자가 입력한 id
   try {
     // UserTable에서 사용자 ID 및 알러지 값 확인
     const { data: user, error } = await supabase
@@ -28,8 +28,8 @@ async function signIn(userID) { //userID: 사용자가 입력한 id
 }
 
 // 예시 사용법
-signIn('abc123').then((response) => {
+SignIn('abc123').then((response) => {
   console.log(response);
 });
 
-export default signIn;
+export default SignIn;
