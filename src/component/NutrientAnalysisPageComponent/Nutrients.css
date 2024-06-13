@@ -1,0 +1,33 @@
+.nutrient-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 135px;
+  }
+  
+  .nutrient-item {
+    text-align: center;
+    width: 230px;
+  }
+  
+  .nutrient-label {
+    font-size: 35px;
+    margin-top: 10px;
+  }
+  
+  .additional-info {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 210px;
+  }
+  
+  .additional-item {
+    text-align: center;
+    width: 130px;
+  }
+  
+  .additional-label {
+    font-size: 28px;
+    margin-top: 10px;
+  }
