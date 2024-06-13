@@ -2,6 +2,7 @@ import React from 'react';
 import CreateReceiptTest from './api/CreateReceiptTest';
 import SignInTest from './api/SignInTest';
 import ShowReceiptTest from './api/ShowReceiptTest';
+import SignUpTest from './api/SignUpTest';
 // import MarkSoldOutTest from './api/MarkSoldOutTest';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <CreateReceiptTest />
       <SignInTest />
       <ShowReceiptTest />
+      <SignUpTest />
       {/* <MarkSoldOutTest /> */}
     </div>
   );
