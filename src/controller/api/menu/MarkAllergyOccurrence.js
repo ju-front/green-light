@@ -1,4 +1,4 @@
-import { supabase } from '../supabaseClient';
+import { supabase } from '../../supabaseClient';
 
 // 사용자 알러지 정보를 바탕으로 해당 알러지를 포함한 메뉴 이름을 반환하는 함수
 async function MarkAllergyOccurrence(userAllergies) {

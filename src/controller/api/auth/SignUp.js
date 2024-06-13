@@ -1,4 +1,4 @@
-import { supabase } from '../supabaseClient';
+import { supabase } from '../../supabaseClient';
 
 // 사용자 ID 중복 확인 및 새로운 사용자 생성 또는 업데이트 함수
 async function SignUp(userID, allergyData) {

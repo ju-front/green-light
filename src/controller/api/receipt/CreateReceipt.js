@@ -1,5 +1,4 @@
-import { supabase } from '../supabaseClient';
-
+import { supabase } from '../../supabaseClient';
 
 async function CreateReceipt(order) {
   try {

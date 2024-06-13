@@ -1,4 +1,4 @@
-import { supabase } from '../supabaseClient';
+import { supabase } from '../../supabaseClient';
 
 // 재료의 재고 상태를 업데이트하는 함수
 async function MarkSoldOut() {
