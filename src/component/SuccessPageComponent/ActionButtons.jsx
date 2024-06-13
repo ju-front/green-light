@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ActionButtons.css";
 import CustomButton from "../CustomComponent/CustomButtons";
-import CustomAlert from "../CustomComponent/CustomAlert"; // CustomAlert import 추가
+import CustomAlert from "../CustomComponent/CustomAlert";
 import { useNavigate } from "react-router-dom";
 
 const ActionButtons = () => {
