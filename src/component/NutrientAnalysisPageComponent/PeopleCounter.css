@@ -1,0 +1,51 @@
+.people-count {
+    position: absolute;
+    top: 65px;
+    right: 70px;
+    font-size: 25px;
+    color: white;
+  }
+  
+  .people-count-controls {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .people-count-text {
+    margin: 0 30px;
+    align-items: center;
+  }
+  
+  .minus-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD2D2;
+    color: red;
+    font-size: 32px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .plus-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C5C5F0;
+    color: blue;
+    font-size: 32px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
