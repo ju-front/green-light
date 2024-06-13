@@ -9,6 +9,7 @@ const CustomTextField = ({
   backgroundColor = "white",
   fontColor = "black",
   fontSize = "16px",
+  placeholder = "",
 }) => {
   const sizeStyles = {
     small: {
@@ -33,6 +34,7 @@ const CustomTextField = ({
       className={`custom-textfield ${size}`}
       value={value}
       onChange={onChange}
+      placeholder={placeholder}
       style={{
         backgroundColor: backgroundColor,
         color: fontColor,
@@ -50,6 +52,7 @@ CustomTextField.propTypes = {
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string,
   fontSize: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 export default CustomTextField;
