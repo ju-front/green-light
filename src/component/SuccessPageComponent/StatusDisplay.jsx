@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./StatusDisplay.css";
-import CustomTextField from "../CustomTextField";
+import CustomTextField from "../CustomComponent/CustomTextField";
 
 const StatusDisplay = ({ setUsername, handleArrowClick }) => {
   const [inputValue, setInputValue] = useState("");
