@@ -1,7 +1,7 @@
 import React from "react";
 import "./PointStatus.css";
 import { useNavigate } from "react-router-dom";
-import CustomButton from "../CustomButtons";
+import CustomButton from "../CustomComponent/CustomButtons";
 
 const PointStatus = ({ username, userPoint }) => {
   const navigate = useNavigate();
