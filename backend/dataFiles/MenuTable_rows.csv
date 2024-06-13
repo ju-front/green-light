@@ -1,14 +1,14 @@
 id,created_at,menu,category,ingredient_id,allergy_id,nutrition_id,sold_out,allergy_occurrence,order_count,image_url,price
-1,2024-06-09 07:04:53.55788+00,bruschetta,appetizer,1,1,1,false,false,0,https://static.wtable.co.kr/image-resize/production/service/recipe/100/4x3/6821ee02-5846-4f9e-a4b8-7cf9b549126b.jpg,6000
-2,2024-06-09 07:04:53.55788+00,caprese_salad,appetizer,2,2,2,false,false,0,https://recipe1.ezmember.co.kr/cache/recipe/2020/06/25/0aff91e3dbc15d35d3df52c952177f541.jpg,8000
-3,2024-06-09 07:04:53.55788+00,caesar_salad,appetizer,3,3,3,false,false,0,https://recipe1.ezmember.co.kr/cache/recipe/2018/07/22/3bc1856e3d0263519df771f6dea327dc1.jpg,7000
-4,2024-06-09 07:04:53.55788+00,maragherita_pizza,main_dish,4,4,4,false,false,0,https://i.namu.wiki/i/tf5DuJNrtIkYP0srIDkAPyk6rAI6lvHEIPAxrygx1v8FDap_e_K0W4Ecg1id4Dm22YQzLP9LaS0mXwmfBSdMdQ.webp,12000
-5,2024-06-09 07:04:53.55788+00,alfredo_pasta,main_dish,5,5,5,false,false,0,https://img.freepik.com/premium-photo/photo-chicken-alfredo-pasta_933496-17781.jpg,13000
-6,2024-06-09 07:04:53.55788+00,bolognese_spaghetti,main_dish,6,6,6,false,false,0,https://static.wtable.co.kr/image-resize/production/service/recipe/1886/16x9/fff78c8b-be96-44f0-bd91-653a5d297b8c.jpg,14000
-7,2024-06-09 07:04:53.55788+00,pesto_pasta,main_dish,7,7,7,false,false,0,https://cdn.imweb.me/thumbnail/20220623/417baec03c622.jpg,13000
-8,2024-06-09 07:04:53.55788+00,shrimp_risotto,main_dish,8,8,8,false,false,0,https://recipe1.ezmember.co.kr/cache/recipe/2020/07/15/45a490d842275b5473636b561201b0131.jpg,15000
-9,2024-06-09 07:04:53.55788+00,focaccia,main_dish,9,9,9,false,false,0,https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Focaccia-erbe-olive.jpg/640px-Focaccia-erbe-olive.jpg,5000
-10,2024-06-09 07:04:53.55788+00,minestrone_soup,main_dish,10,10,10,false,false,0,https://www.unileverfoodsolutions.co.kr/dam/global-ufs/mcos/south-korea/calcmenu/recipes/kr-recipes/western/header/%EB%AF%B8%EB%84%A4%EC%8A%A4%ED%8A%B8%EB%A1%9C%EB%84%A4-minestrone-soup-header.png,6000
-11,2024-06-09 07:04:53.55788+00,gelato,dessert,11,11,11,false,false,0,https://i.namu.wiki/i/g3Rt4-oE30JuiJRDQOJcPi9PGdfAmqEUAk_2zdloaaqqBKWpYGHMZdE6jbqB0-KUEL-tKt9blS2o9QEqlITE5g.webp,4000
-12,2024-06-09 07:04:53.55788+00,panna_cotta,dessert,12,12,12,false,false,0,https://recipe1.ezmember.co.kr/cache/recipe/2019/01/04/7806a1394260cfcd7a4878de87071e321.jpg,5000
-13,2024-06-09 07:04:53.55788+00,expresso,dessert,13,13,13,false,false,0,https://www.dongsuh.co.kr/2017/images/page/03_mediaCenter/img_class_3_2_1_1.jpg,3000
+1,2024-06-09 07:04:53.55788+00,bruschetta,appetizer,1,1,1,FALSE,FALSE,0,https://static.wtable.co.kr/image-resize/production/service/recipe/100/4x3/6821ee02-5846-4f9e-a4b8-7cf9b549126b.jpg,6000
+2,2024-06-09 07:04:53.55788+00,caprese_salad,appetizer,2,2,2,FALSE,FALSE,0,https://recipe1.ezmember.co.kr/cache/recipe/2020/06/25/0aff91e3dbc15d35d3df52c952177f541.jpg,8000
+3,2024-06-09 07:04:53.55788+00,caesar_salad,appetizer,3,3,3,FALSE,FALSE,0,https://recipe1.ezmember.co.kr/cache/recipe/2018/07/22/3bc1856e3d0263519df771f6dea327dc1.jpg,7000
+4,2024-06-09 07:04:53.55788+00,maragherita_pizza,main_dish,4,4,4,FALSE,FALSE,0,https://i.namu.wiki/i/tf5DuJNrtIkYP0srIDkAPyk6rAI6lvHEIPAxrygx1v8FDap_e_K0W4Ecg1id4Dm22YQzLP9LaS0mXwmfBSdMdQ.webp,12000
+5,2024-06-09 07:04:53.55788+00,alfredo_pasta,main_dish,5,5,5,FALSE,FALSE,0,https://img.freepik.com/premium-photo/photo-chicken-alfredo-pasta_933496-17781.jpg,13000
+6,2024-06-09 07:04:53.55788+00,bolognese_spaghetti,main_dish,6,6,6,FALSE,FALSE,0,https://static.wtable.co.kr/image-resize/production/service/recipe/1886/16x9/fff78c8b-be96-44f0-bd91-653a5d297b8c.jpg,14000
+7,2024-06-09 07:04:53.55788+00,pesto_pasta,main_dish,7,7,7,FALSE,FALSE,0,https://cdn.imweb.me/thumbnail/20220623/417baec03c622.jpg,13000
+8,2024-06-09 07:04:53.55788+00,shrimp_risotto,main_dish,8,8,8,FALSE,FALSE,0,https://recipe1.ezmember.co.kr/cache/recipe/2020/07/15/45a490d842275b5473636b561201b0131.jpg,15000
+9,2024-06-09 07:04:53.55788+00,focaccia,main_dish,9,9,9,FALSE,FALSE,0,https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Focaccia-erbe-olive.jpg/640px-Focaccia-erbe-olive.jpg,5000
+10,2024-06-09 07:04:53.55788+00,minestrone_soup,main_dish,10,10,10,FALSE,FALSE,0,https://www.unileverfoodsolutions.co.kr/dam/global-ufs/mcos/south-korea/calcmenu/recipes/kr-recipes/western/header/%EB%AF%B8%EB%84%A4%EC%8A%A4%ED%8A%B8%EB%A1%9C%EB%84%A4-minestrone-soup-header.png,6000
+11,2024-06-09 07:04:53.55788+00,gelato,dessert,11,11,11,FALSE,FALSE,0,https://i.namu.wiki/i/g3Rt4-oE30JuiJRDQOJcPi9PGdfAmqEUAk_2zdloaaqqBKWpYGHMZdE6jbqB0-KUEL-tKt9blS2o9QEqlITE5g.webp,4000
+12,2024-06-09 07:04:53.55788+00,panna_cotta,dessert,12,12,12,FALSE,FALSE,0,https://recipe1.ezmember.co.kr/cache/recipe/2019/01/04/7806a1394260cfcd7a4878de87071e321.jpg,5000
+13,2024-06-09 07:04:53.55788+00,espresso,dessert,13,13,13,FALSE,FALSE,0,https://www.dongsuh.co.kr/2017/images/page/03_mediaCenter/img_class_3_2_1_1.jpg,3000
