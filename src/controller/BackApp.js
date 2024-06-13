@@ -4,6 +4,7 @@ import SignInTest from './api/SignInTest';
 import ShowReceiptTest from './api/ShowReceiptTest';
 import SignUpTest from './api/SignUpTest';
 import CalculateNutritionTest from './api/CalculateNutritionTest';
+import MarkAllergyOccurrenceTest from './api/MarkAllergyOccurrenceTest';
 // import MarkSoldOutTest from './api/MarkSoldOutTest';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <ShowReceiptTest />
       <SignUpTest />
       <CalculateNutritionTest />
+      <MarkAllergyOccurrenceTest />
       {/* <MarkSoldOutTest /> */}
     </div>
   );
