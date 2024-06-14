@@ -8,7 +8,7 @@
 |:-:|:-:|:-:|:-:|
 |권혁원 (팀장)<br/>[@ambition-kwon](https://github.com/ambition-kwon)|김재형<br/>[@21divcert](https://github.com/21divcert)|김지혁<br/>[@kjeok00](https://github.com/kjeok00)|정그린<br/>[@Green-JEONG](https://github.com/Green-JEONG)|
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Green+Light+는+G-Order를+통해+사용자+편의적인+서비스를+제공합니다.&color=00FF00&width=665)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Green+Light는+G-Order를+통해+사용자+편의적인+서비스를+제공합니다.&color=00FF00&width=665)](https://git.io/typing-svg)
 
 ### 🪡 Skill
 ![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white) 
