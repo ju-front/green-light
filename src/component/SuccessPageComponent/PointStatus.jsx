@@ -15,9 +15,8 @@ const PointStatus = ({ username, userPoint }) => {
       </h1>
       <CustomButton
         text='처음으로'
-        fontSize='20px'
+        fontSize='large'
         color='green'
-        size={{ width: "150px", height: "50px" }}
         onClick={handleHomeClick}
       />
     </div>

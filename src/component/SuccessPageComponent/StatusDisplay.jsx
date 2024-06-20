@@ -17,12 +17,13 @@ const StatusDisplay = ({ setUsername, handleArrowClick }) => {
         <CustomTextField
           value={inputValue}
           onChange={handleChange}
-          size='large'
-          backgroundColor='gray'
+          size='medium'
+          backgroundColor='transparent'
           fontColor='white'
+          placeholder='ID를 입력해주세요'
         />
-        <button className='next-button' onClick={handleArrowClick}>
-          <span className='arrow-icon'>→</span>
+        <button className='loginButton' onClick={handleArrowClick}>
+          로그인
         </button>
       </div>
     </div>
