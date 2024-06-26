@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import SignUp from './SignUp';
+import ReceiptSignIn from './ReceiptSignIn';
 
-const SignUpTest = () => {
+const ReceiptSignInTest = () => {
   const [userID, setUserID] = useState('');
+  const [receiptID, setReceiptID] = useState('');
+  const [response, setResponse] = useState(null);
   const [allergyData, setAllergyData] = useState({
     gluten: false,
     dairy: false,
@@ -14,11 +16,9 @@ const SignUpTest = () => {
     celery: false,
     mustard: false
   });
-  const [receiptID, setReceiptID] = useState('');
-  const [response, setResponse] = useState(null);
 
-  const handleSignUp = async () => {
-    const result = await SignUp(userID, allergyData, receiptID);
+  const handleSignIn = async () => {
+    const result = await ReceiptSignIn(userID, allergyData, receiptID);
     setResponse(result);
   };
 
@@ -32,7 +32,7 @@ const SignUpTest = () => {
 
   return (
     <div>
-      <h1>Sign Up Test</h1>
+      <h1>Receipt Sign In Test</h1>
       <input
         type="text"
         placeholder="Enter User ID"
@@ -61,7 +61,7 @@ const SignUpTest = () => {
           </label>
         </div>
       ))}
-      <button onClick={handleSignUp}>Sign Up</button>
+      <button onClick={handleSignIn}>Sign In</button>
       {response && (
         <div>
           <h3>Response</h3>
@@ -72,4 +72,4 @@ const SignUpTest = () => {
   );
 };
 
-export default SignUpTest;
+export default ReceiptSignInTest;

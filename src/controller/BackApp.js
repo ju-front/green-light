@@ -2,10 +2,12 @@ import React from 'react';
 
 import SignInTest from './api/auth/SignInTest';
 import SignUpTest from './api/auth/SignUpTest';
+import ReceiptSignInTest from './api/auth/ReceiptSignInTest';
 
 import CalculateNutritionTest from './api/menu/CalculateNutritionTest';
-import MarkAllergyOccurrenceTest from './api/menu/MarkAllergyOccurrenceTest';
-import MarkSoldOutTest from './api/menu/MarkSoldOutTest';
+import FetchMenuTest from './api/menu/FetchMenuTest';
+//import MarkAllergyOccurrenceTest from './api/menu/MarkAllergyOccurrenceTest';
+//import MarkSoldOutTest from './api/menu/MarkSoldOutTest';
 
 import CreateReceiptTest from './api/receipt/CreateReceiptTest';
 import ShowReceiptTest from './api/receipt/ShowReceiptTest';
@@ -13,13 +15,16 @@ import ShowReceiptTest from './api/receipt/ShowReceiptTest';
 function BackApp() {
   return (
     <div className="BackApp">
-      <CreateReceiptTest />
       <SignInTest />
-      <ShowReceiptTest />
       <SignUpTest />
+      <ReceiptSignInTest />
+      
       <CalculateNutritionTest />
-      <MarkAllergyOccurrenceTest />
-      <MarkSoldOutTest />
+      <FetchMenuTest />
+      
+      <CreateReceiptTest />
+      <ShowReceiptTest />
+      {/* <MarkAllergyOccurrenceTest /> */}
       {/* <MarkSoldOutTest /> */}
     </div>
   );

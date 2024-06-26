@@ -36,7 +36,7 @@ async function CalculateNutrition(order) {
       }
     });
 
-    return { message: 'Total nutrition calculated successfully', totalNutrition };
+    return {totalNutrition };
   } catch (error) {
     console.error('Error:', error);
     return { error: 'An error occurred during the nutrition calculation' };
