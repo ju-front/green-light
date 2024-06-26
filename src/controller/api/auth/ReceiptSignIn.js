@@ -1,7 +1,6 @@
 import { supabase } from '../../supabaseClient';
 
-// 사용자 ID 중복 확인 및 새로운 사용자 생성 또는 업데이트 함수
-async function SignUp(userID, allergyData, receiptID) {
+async function ReceiptSignIn(userID, allergyData, receiptID) {
   try {
     // UserTable에서 사용자 ID 확인
     const { data: existingUser, error: checkError } = await supabase
@@ -15,8 +14,8 @@ async function SignUp(userID, allergyData, receiptID) {
       return { error: 'An error occurred while checking user ID' };
     }
 
-    // ReceiptTable에서 해당 receiptID와 일치하는 row 가져오기
-    const { data: receiptData, error: receiptError } = await supabase
+    // ReceiptTable에서 해당 receiptID의 total_price 가져오기
+    const { data: receipt, error: receiptError } = await supabase
       .from('ReceiptTable')
       .select('total_price')
       .eq('id', receiptID)
@@ -27,11 +26,7 @@ async function SignUp(userID, allergyData, receiptID) {
       return { error: 'An error occurred while fetching receipt data' };
     }
 
-    if (!receiptData) {
-      return { error: 'Receipt not found' };
-    }
-
-    const couponValue = Math.floor(receiptData.total_price / 10000);
+    const couponValue = Math.floor(receipt.total_price / 10000);
 
     let response;
     if (existingUser) {
@@ -67,8 +62,8 @@ async function SignUp(userID, allergyData, receiptID) {
     return response;
   } catch (error) {
     console.error('Error:', error);
-    return { error: 'An error occurred during sign-up' };
+    return { error: 'An error occurred during sign-in' };
   }
 }
 
-export default SignUp;
+export default ReceiptSignIn;

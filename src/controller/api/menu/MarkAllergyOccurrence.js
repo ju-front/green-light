@@ -1,10 +1,10 @@
 import { supabase } from '../../supabaseClient';
 
 // 사용자 알러지 정보를 바탕으로 해당 알러지를 포함한 메뉴 이름을 반환하는 함수
-async function MarkAllergyOccurrence(userAllergies) {
+async function MarkAllergyOccurrence(allergyData) {
   try {
     // AllergyTable에서 모든 데이터 가져오기
-    const { data: allergyData, error: allergyError } = await supabase
+    const { data: allergyDt, error: allergyError } = await supabase
       .from('AllergyTable')
       .select('*');
 
@@ -17,9 +17,9 @@ async function MarkAllergyOccurrence(userAllergies) {
     const allergyOccurrenceMenus = [];
 
     // AllergyTable의 각 메뉴를 확인하여 사용자의 알러지 정보와 비교
-    allergyData.forEach(allergy => {
-      const hasAllergy = Object.keys(userAllergies).some(allergyType => {
-        return userAllergies[allergyType] && allergy[allergyType];
+    allergyDt.forEach(allergy => {
+      const hasAllergy = Object.keys(allergyData).some(allergyType => {
+        return allergyData[allergyType] && allergy[allergyType];
       });
 
       if (hasAllergy) {
@@ -35,7 +35,7 @@ async function MarkAllergyOccurrence(userAllergies) {
 }
 
 // 예시 사용법
-const userAllergies = {
+const allergyData = {
   gluten: true,
   dairy: false,
   egg: true,
@@ -47,7 +47,7 @@ const userAllergies = {
   mustard: true
 };
 
-MarkAllergyOccurrence(userAllergies).then((response) => {
+MarkAllergyOccurrence(allergyData).then((response) => {
   console.log(response);
 });
 

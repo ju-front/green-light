@@ -1,48 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ShowReceipt from './ShowReceipt';
 
-function ShowReceiptTest() {
+const ShowReceiptTest = () => {
   const [receiptData, setReceiptData] = useState(null);
   const [error, setError] = useState(null);
+  const id = 16; // 테스트할 id를 설정합니다.
 
-  const handleFetchReceipt = async () => {
-    const response = await ShowReceipt();
-    if (response.error) {
-      setError(response.error);
-      setReceiptData(null);
-    } else {
-      setError(null);
-      setReceiptData(response.data);
-    }
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await ShowReceipt(id);
+
+      if (response.error) {
+        setError(response.error);
+      } else {
+        setReceiptData(response.data);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!receiptData) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="ShowReceiptTest">
-      <h1>Show Latest Receipt</h1>
-      <button onClick={handleFetchReceipt}>Fetch Latest Receipt</button>
-
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {receiptData && (
-        <div>
-          <h2>Latest Receipt Data</h2>
-          <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(receiptData, null, 2)}</pre>
-          <ul>
-            {Object.entries(receiptData).map(([key, value]) => (
-              key !== 'total_price' ? (
-                <li key={key}>
-                  {key}: Quantity: {value.quantity}, Price: {value.price}
-                </li>
-              ) : (
-                <li key={key}>
-                  Total Price: {value}
-                </li>
-              )
-            ))}
-          </ul>
-        </div>
-      )}
+    <div>
+      <h1>Show Receipt Test</h1>
+      <h2>Receipt</h2>
+      <ul>
+        {Object.entries(receiptData.receipt).map(([key, value], index) => (
+          <li key={index}>
+            <strong>{key}</strong>: {value.quantity} - {value.price}
+          </li>
+        ))}
+      </ul>
+      <h2>Total Price</h2>
+      <p>{receiptData.total_price}</p>
     </div>
   );
-}
+};
 
 export default ShowReceiptTest;
