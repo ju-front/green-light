@@ -24,7 +24,7 @@ async function CreateReceipt(orderData) {
     }
 
     console.log('Receipt created successfully:', data);
-    return { message: 'Receipt created successfully', data };
+    return { data };
   } catch (error) {
     console.error('Error:', error);
     return { error: 'An error occurred during receipt creation' };
