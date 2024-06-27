@@ -1,12 +1,12 @@
 import { supabase } from '../../supabaseClient';
 
-const ShowReceipt = async (id) => {
+const ShowReceipt = async (receiptID) => {
   try {
     // ReceiptTable에서 해당 id의 row 가져오기
     const { data: receiptData, error: receiptError } = await supabase
       .from('ReceiptTable')
       .select('*')
-      .eq('id', id)
+      .eq('id', receiptID)
       .single();
 
     if (receiptError) {
