@@ -3,13 +3,13 @@ import './Nutrients.css';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const Nutrients = ({nutrientsData}) => {
+const Nutrients = ({nutrientsData, peopleCount}) => {
   const nutrients = [
-    { label: '탄수화물', value: nutrientsData.carbohydrate, color: '#FF6B6B' },
-    { label: '단백질', value: nutrientsData.protein, color: '#4ECCA3' },
-    { label: '지방', value: nutrientsData.fat, color: '#9D8DF1' },
-    { label: '나트륨', value: nutrientsData.sodium, color: '#FFB74D' },
-    { label: '콜레스테롤', value: nutrientsData.cholesterol, color: '#FF8A65' },
+    { label: '탄수화물', value: Math.round(nutrientsData.carbohydrate / peopleCount), color: '#FF6B6B' },
+    { label: '단백질', value: Math.round(nutrientsData.protein / peopleCount), color: '#4ECCA3' },
+    { label: '지방', value: Math.round(nutrientsData.fat / peopleCount), color: '#9D8DF1' },
+    { label: '나트륨', value: Math.round(nutrientsData.sodium / peopleCount), color: '#FFB74D' },
+    { label: '콜레스테롤', value: Math.round(nutrientsData.cholesterol / peopleCount), color: '#FF8A65' },
   ];
 
   return (

@@ -12,6 +12,7 @@ const NutrientAnalysisPage = () => {
   const navigate = useNavigate();
   const [nutrientData, setNutrientData] = useState({});
   const {orderData, setOrderData} = useGlobalData();
+  const [peopleCount, setPeopleCount] = useState(1);
 
   useEffect(() => {
     CalculateNutrition(orderData.items)
@@ -34,8 +35,8 @@ const NutrientAnalysisPage = () => {
     <div className="container">
       <div className="sub-container">
         <div className="header-text">영양성분 확인해 보실래요?</div>
-        <PeopleCounter />
-        <Nutrients nutrientsData={nutrientData} />
+        <PeopleCounter setPeopleCount={setPeopleCount} peopleCount={peopleCount} />
+        <Nutrients nutrientsData={nutrientData} peopleCount={peopleCount} />
         <ActionButtons
           handleClick={handleClick}
           handleBackClick={handleBackClick}
