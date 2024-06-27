@@ -5,10 +5,21 @@ const DataContext = createContext(undefined);
 export const DataProvider = ({ children }) => {
   // 1. 추가하고 싶은 변수 및 변경 함수를 다음과 같이 추가합니다.
   const [username, setUsername] = useState("khw");
+  const [allergyData, setAllergyData] = useState({
+    "gluten": false,
+    "dairy": false,
+    "egg": false,
+    "shellfish": false,
+    "nut": false,
+    "soy": false,
+    "fish": false,
+    "celery": false,
+    "mustard": false
+  });
 
   // 2. 위에서 추가한 변수들을 value={{ 여기 }}에 삽입합니다.(끝)
   return (
-    <DataContext.Provider value={{ username, setUsername }}>
+    <DataContext.Provider value={{ username, setUsername, allergyData, setAllergyData }}>
       {children}
     </DataContext.Provider>
   );

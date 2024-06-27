@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './AllergySelectPage.css';
 import '../global.css';
 import { useNavigate } from "react-router-dom";
 import IdCheck from "../component/AllergySelectPageComponent/IdCheck";
 import AllergyButtons from "../component/AllergySelectPageComponent/AllergyButtons";
 import NavigationButtons from "../component/AllergySelectPageComponent/NavigationButtons";
+import { useGlobalData } from "../context/DataContext"; // Adjust the import path as necessary
 
 const AllergySelectPage = () => {
   const navigate = useNavigate();
-  const [selectedAllergies, setSelectedAllergies] = useState([]);
+  const { allergyData, setAllergyData } = useGlobalData();
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    console.log(allergyData);
+  }, [allergyData]);
 
   const handleInitialClick = () => {
     navigate("/");
@@ -20,14 +25,13 @@ const AllergySelectPage = () => {
   }
 
   const handleAllergyToggle = (allergy) => {
-    if (selectedAllergies.includes(allergy)) {
-      setSelectedAllergies(selectedAllergies.filter(a => a !== allergy));
-    } else {
-      setSelectedAllergies([...selectedAllergies, allergy]);
-    }
+    setAllergyData(prevAllergyData => ({
+      ...prevAllergyData,
+      [allergy]: !prevAllergyData[allergy]
+    }));
   }
 
-  const isSelected = (allergy) => selectedAllergies.includes(allergy);
+  const isSelected = (allergy) => allergyData[allergy];
 
   return (
     <div className="container">
@@ -38,7 +42,7 @@ const AllergySelectPage = () => {
           setInputValue={setInputValue} 
         />
         <AllergyButtons 
-          selectedAllergies={selectedAllergies} 
+          selectedAllergies={Object.keys(allergyData).filter(allergy => allergyData[allergy])} 
           handleAllergyToggle={handleAllergyToggle} 
           isSelected={isSelected} 
         />
