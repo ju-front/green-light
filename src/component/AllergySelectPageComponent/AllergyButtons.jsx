@@ -3,10 +3,22 @@ import './AllergyButtons.css';
 
 const AllergyButtons = ({ selectedAllergies, handleAllergyToggle, isSelected }) => {
   const allergies = [
-    "난류", "우유", "곡류",
-    "갑각류", "견과류", "생선류",
-    "과일", "연체류", "육류"
+    "gluten", "dairy", "egg",
+    "shellfish", "nut", "soy",
+    "fish", "celery", "mustard"
   ];
+
+  const allergyNames = {
+    "gluten": "곡류",
+    "dairy": "우유",
+    "egg": "난류",
+    "shellfish": "갑각류",
+    "nut": "견과류",
+    "soy": "연체류",
+    "fish": "생선류",
+    "celery": "과일",
+    "mustard": "육류"
+  };
 
   return (
     <div className="allergy-button-container">
@@ -16,7 +28,7 @@ const AllergyButtons = ({ selectedAllergies, handleAllergyToggle, isSelected }) 
           className={`allergy-button ${isSelected(allergy) ? "selected" : ""}`} 
           onClick={() => handleAllergyToggle(allergy)}
         >
-          {allergy}
+          {allergyNames[allergy]}
         </div>
       ))}
     </div>
