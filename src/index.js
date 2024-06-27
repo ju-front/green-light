@@ -13,6 +13,8 @@ import NutrientAnalysisPage from "./page/NutrientAnalysisPage";
 import AllergySelectPage from "./page/AllergySelectPage";
 import {DataProvider} from "./context/DataContext";
 
+import BackApp from './controller/BackApp';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/allergy-select",
     element: <AllergySelectPage />,
+  },
+  {
+    path: "/backApp",
+    element: <BackApp />,
+  },
+  {
+    path: "*",
+    element: <div>404</div>,
   },
 ]);
 
