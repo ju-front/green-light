@@ -41,7 +41,11 @@ const ActionButtons = () => {
         onClick={ActionButtonsClickJoin}
       />
       {showAlert && (
-        <CustomAlert message='회원가입되셨습니다' duration={3000} />
+        <CustomAlert
+          message='회원가입되셨습니다'
+          duration={3000}
+          fontColor='green'
+        />
       )}
     </div>
   );
