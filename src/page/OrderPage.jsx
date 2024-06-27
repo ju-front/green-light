@@ -1,8 +1,11 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './OrderPage.css'
 import '../global.css'
 import {MarginVertical} from "../component";
 import {useNavigate} from "react-router-dom";
+import FetchMenu from "../controller/api/menu/FetchMenu";
+import {useGlobalData} from "../context/DataContext";
+import CreateReceipt from "../controller/api/receipt/CreateReceipt";
 
 const Button = ({ className, buttonName, onClick }) => (
   <button className={className} onClick={onClick}>
@@ -70,44 +73,40 @@ const Order = ({ name, price, amount, onIncrease, onDecrease }) => (
   </div>
 );
 
-const mockData = {
-  top3: [
-    { name: "bruschetta", price: 6000, img: "https://static.wtable.co.kr/image-resize/production/service/recipe/100/4x3/6821ee02-5846-4f9e-a4b8-7cf9b549126b.jpg" },
-    { name: "pesto_pasta", price: 13000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "focaccia", price: 5000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" }
-  ],
-  appetizer: [
-    { name: "bruschetta", price: 6000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "caprese_salad", price: 8000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" }
-  ],
-  main_dish: [
-    { name: "alfredo_pasta", price: 13000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "shrimp_risotto", price: 15000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "pesto_pasta", price: 13000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "bruschetta", price: 6000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-  ],
-  dessert: [
-    { name: "gelato", price: 4000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "expresso", price: 3000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" },
-    { name: "margherita_pizza", price: 6000, img: "https://i.namu.wiki/i/A5AIHovo1xwuEjs7V8-aKpZCSWY2gN3mZEPR9fymaez_J7ufmI9B7YyDBu6kZy9TC9VWJatXVJZbDjcYLO2S8Q.webp" }
-  ],
-  soldOut_menu: [
-    "gelato",
-    "bolognese_spaghetti"
-  ],
-  allergy_menu: [
-    "margherita_pizza"
-  ]
-};
+const mockAllergy = {
+  "gluten": false,
+  "dairy": false,
+  "egg": false,
+  "shellfish": false,
+  "nut": false,
+  "soy": false,
+  "fish": false,
+  "celery": false,
+  "mustard": false
+}
 
 const OrderPage = () => {
-  const { top3, appetizer, main_dish, dessert, soldOut_menu, allergy_menu } = mockData;
+  useEffect(() => {
+    FetchMenu(mockAllergy)
+      .then((data) => {
+        setMenuData(data.data);
+        console.log(JSON.stringify(data, null, 2));
+      }).catch(()=>{
+        console.log("fetch menu error");
+      })
+  }, []);
+  const {setReceiptID} = useGlobalData();
+  const [menuData, setMenuData] = useState({});
+  const { top3, appetizer, main_dish, dessert, soldOut_menu, allergy_menu } = menuData;
   const [orderData, setOrderData] = useState({ items: {}, total_price: 0 });
   const navigate = useNavigate();
   const navigateAllergySelectPage = () => {
     navigate("/allergy-select");
   }
-  const navigateNutrientAnalysisPage = () => {
+  const navigateNutrientAnalysisPage = async () => {
+    const data = await CreateReceipt(orderData);
+    console.log(data);
+    setReceiptID(data);
     navigate("/nutrient-analysis");
   }
   const addToOrder = (name, price) => {
@@ -177,10 +176,10 @@ const OrderPage = () => {
                 <Order
                   key={name}
                   name={name}
-                  price={getItemPrice(mockData, name)}
+                  price={getItemPrice(menuData, name)}
                   amount={orderData.items[name]}
-                  onIncrease={() => handleIncrease(mockData, name)}
-                  onDecrease={() => handleDecrease(mockData, name)}
+                  onIncrease={() => handleIncrease(menuData, name)}
+                  onDecrease={() => handleDecrease(menuData, name)}
                 />
               ))}
             </div>
@@ -190,7 +189,7 @@ const OrderPage = () => {
             </div>
             <div className="submit-area">
               <Button className="back" buttonName={'이전'} onClick={navigateAllergySelectPage} />
-              <Button className="submit" buttonName={'주문하기'} onClick={navigateNutrientAnalysisPage} />
+              <Button className="submit" buttonName={'주문하기'} onClick={() => navigateNutrientAnalysisPage(orderData)} />
             </div>
           </div>
         </div>
