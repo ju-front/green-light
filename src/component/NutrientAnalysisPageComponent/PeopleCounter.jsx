@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './PeopleCounter.css';
 
 const PeopleCounter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const handleMinus = () => {
-    setCount(prevCount => Math.max(prevCount - 1, 0));
+    setCount(prevCount => Math.max(prevCount - 1, 1));
   };
 
   const handlePlus = () => {
