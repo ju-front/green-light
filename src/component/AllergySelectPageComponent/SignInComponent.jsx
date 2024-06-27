@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SignInComponent.css';
 import CustomTextField from '../CustomComponent/CustomTextField';
 
-const SignInComponent = () => {
+const SignInComponent = ({ onLoginClick }) => {
   const [inputValue, setInputValue] = useState('');
 
   return (
@@ -17,7 +17,7 @@ const SignInComponent = () => {
           fontSize="15px"
           placeholder="아이디를 입력해주세요."
         />
-        <button className="loginButton">로그인</button>
+        <button className="loginButton" onClick={onLoginClick}>로그인</button>
       </div>
     </div>
   );
