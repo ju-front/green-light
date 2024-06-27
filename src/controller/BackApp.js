@@ -15,12 +15,12 @@ import ShowReceiptTest from './api/receipt/ShowReceiptTest';
 function BackApp() {
   return (
     <div className="BackApp">
-      <SignInTest />
-      <SignUpTest />
-      <ReceiptSignInTest />
+      {/*<SignInTest /> */}
+      {/* <SignUpTest /> */}
+      { /* <ReceiptSignInTest /> */}
       
-      <CalculateNutritionTest />
-      <FetchMenuTest />
+      { /*<CalculateNutritionTest /> */}
+      {/* <FetchMenuTest /> */}
       
       <CreateReceiptTest />
       <ShowReceiptTest />
