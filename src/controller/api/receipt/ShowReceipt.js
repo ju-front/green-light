@@ -17,7 +17,8 @@ const ShowReceipt = async (id) => {
     // 결과를 담을 객체 초기화
     const result = {
       receipt: {},
-      total_price: receiptData.total_price
+      total_price: receiptData.total_price,
+      created_at: receiptData.created_at
     };
 
     // ReceiptTable에서 0이 아닌 값의 colum 이름(메뉴 이름)과 값 추출
