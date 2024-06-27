@@ -95,18 +95,17 @@ const OrderPage = () => {
         console.log("fetch menu error");
       })
   }, []);
-  const {setReceiptID} = useGlobalData();
+  const {setReceiptID, orderData, setOrderData} = useGlobalData();
   const [menuData, setMenuData] = useState({});
   const { top3, appetizer, main_dish, dessert, soldOut_menu, allergy_menu } = menuData;
-  const [orderData, setOrderData] = useState({ items: {}, total_price: 0 });
   const navigate = useNavigate();
   const navigateAllergySelectPage = () => {
     navigate("/allergy-select");
   }
   const navigateNutrientAnalysisPage = async () => {
     const data = await CreateReceipt(orderData);
-    console.log(data);
-    setReceiptID(data);
+    console.log(data.data);
+    setReceiptID(data.data);
     navigate("/nutrient-analysis");
   }
   const addToOrder = (name, price) => {

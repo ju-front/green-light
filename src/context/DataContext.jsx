@@ -16,10 +16,11 @@ export const DataProvider = ({ children }) => {
     "celery": false,
     "mustard": false
   });
+  const [orderData, setOrderData] = useState({ items: {}, total_price: 0 });
 
   // 2. 위에서 추가한 변수들을 value={{ 여기 }}에 삽입합니다.(끝)
   return (
-    <DataContext.Provider value={{ username, setUsername, allergyData, setAllergyData, receiptID, setReceiptID}}>
+    <DataContext.Provider value={{ username, setUsername, allergyData, setAllergyData, receiptID, setReceiptID, orderData, setOrderData}}>
       {children}
     </DataContext.Provider>
   );
