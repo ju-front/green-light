@@ -30,7 +30,11 @@ const PublicComponentPage = () => {
         </p>
         <button onClick={() => setShowAlert(true)}>Show Alert</button>
         {showAlert && (
-          <CustomAlert message='This is a custom alert!' duration={3000} />
+          <CustomAlert
+            message='This is a custom alert!'
+            duration={3000}
+            fontColor='black'
+          />
         )}
       </section>
 
