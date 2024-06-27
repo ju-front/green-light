@@ -16,7 +16,9 @@ async function CreateReceipt(orderData) {
     // ReceiptTable에 새로운 row 삽입
     const { data, error } = await supabase
       .from('ReceiptTable')
-      .insert([newRow], { returning: 'minimal' });
+      .insert([newRow])
+      .select('id') // 삽입된 row의 id를 선택하여 반환합니다.
+      .single();
 
     if (error) {
       console.error('Error inserting receipt data:', error);
@@ -24,7 +26,7 @@ async function CreateReceipt(orderData) {
     }
 
     console.log('Receipt created successfully:', data);
-    return { data };
+    return { data: { receiptID: data.id } };
   } catch (error) {
     console.error('Error:', error);
     return { error: 'An error occurred during receipt creation' };
