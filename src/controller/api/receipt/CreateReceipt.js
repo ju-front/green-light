@@ -5,13 +5,13 @@ async function CreateReceipt(orderData) {
   try {
     // 새로운 row 생성 준비
     let newRow = {
-      total_price: orderData.total
+      total_price: orderData.total_price
     };
 
     // 주문 데이터에서 각 메뉴의 수량을 newRow에 추가
-    orderData.items.forEach(item => {
-      newRow[item.name] = item.quantity;
-    });
+    for (const [name, quantity] of Object.entries(orderData.items)) {
+      newRow[name] = quantity;
+    }
 
     // ReceiptTable에 새로운 row 삽입
     const { data, error } = await supabase

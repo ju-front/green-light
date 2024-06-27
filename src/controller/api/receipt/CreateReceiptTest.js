@@ -4,13 +4,13 @@ import CreateReceipt from './CreateReceipt';
 function CreateReceiptTest() {
   const handleOrder = async () => {
     const order = {
-      items: [
-        { name: "focaccia", quantity: 2 },
-        { name: "gelato", quantity: 1 },
-        { name: "panna_cotta", quantity: 3 },
-        { name: "bruschetta", quantity: 3 }
-      ],
-      total: 26000
+      items: {
+        focaccia: 2,
+        gelato: 1,
+        panna_cotta: 3,
+        bruschetta: 3
+      },
+      total_price: 16000
     };
 
     const response = await CreateReceipt(order);
