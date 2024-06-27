@@ -14,25 +14,24 @@
   align-items: center;
 }
 
-.status-display input {
-  padding: 10px;
-  font-size: 20px;
-  margin-right: 10px; /* 오른쪽에 버튼을 넣기 위해 여백 추가 */
-}
-
-.next-button {
-  background-color: #007bff;
+.loginButton {
   color: white;
   border: none;
-  padding: 10px;
-  font-size: 20px;
+  width: 100px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+  background-color: red;
+  text-align: center;
 }
 
-.next-button .arrow-icon {
-  font-size: 20px;
+.loginButton:hover {
+  background-color: #d21e1e;
+}
+
+.loginButton:active {
+  background-color: #9a3c3c;
+  transform: scale(0.94);
 }

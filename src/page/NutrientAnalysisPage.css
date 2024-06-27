@@ -1,0 +1,12 @@
+.header-text {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  font-size: 32px;
+  color: #00FF00;
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+}

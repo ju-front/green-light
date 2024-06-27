@@ -1,0 +1,35 @@
+.allergy-button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin-top: 100px;
+}
+
+.allergy-button {
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    background-color: #7c66bd;
+    width: 200px;
+    height: 130px;
+    line-height: 125px;
+    margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.allergy-button:hover {
+    background-color: #6A1B9A;
+}
+
+.allergy-button:active {
+    background-color: #c9536e;
+    transform: scale(0.94);
+}
+
+.allergy-button.selected {
+    background-color: red;
+}

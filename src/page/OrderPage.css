@@ -146,7 +146,7 @@
     margin-bottom: 30px;
 }
 
-.back{
+.back {
     width: 89px;
     background-color: #9EA5A9;
     display: flex;
@@ -155,10 +155,22 @@
     color: white;
     font-size: 20px;
     font-weight: bold;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
-.submit{
+.back:hover {
+    background-color: #8B949A;
+    transform: scale(1.05);
+}
+
+.back:active {
+    background-color: #7B858A;
+    transform: scale(0.95);
+}
+
+.submit {
     width: 151px;
     background-color: #026202;
     border-bottom-right-radius: 32px;
@@ -168,7 +180,19 @@
     color: white;
     font-size: 20px;
     font-weight: bold;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.submit:hover {
+    background-color: #024F02;
+    transform: scale(1.05);
+}
+
+.submit:active {
+    background-color: #023D02;
+    transform: scale(0.95);
 }
 
 .item{
@@ -206,7 +230,7 @@ img{
     gap: 34px
 }
 
-.overlay-stock{
+.overlay-sold-out{
     position: absolute;
     top: 0;
     left: 0;
@@ -274,7 +298,7 @@ img{
     font-weight: 700;
 }
 
-.plus-button{
+.plus-button {
     width: 34px;
     height: 34px;
     border-radius: 6px;
@@ -287,9 +311,19 @@ img{
     font-weight: 700;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
-.minus-button{
+.plus-button:hover {
+    background-color: #B0B0E0;
+}
+
+.plus-button:active {
+    background-color: #A0A0D0;
+    transform: scale(0.95);
+}
+
+.minus-button {
     width: 34px;
     height: 34px;
     border-radius: 6px;
@@ -302,5 +336,15 @@ img{
     font-weight: 700;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.minus-button:hover {
+    background-color: #FFC0C0;
+}
+
+.minus-button:active {
+    background-color: #FFB0B0;
+    transform: scale(0.95);
 }
 
