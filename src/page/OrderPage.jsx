@@ -73,30 +73,18 @@ const Order = ({ name, price, amount, onIncrease, onDecrease }) => (
   </div>
 );
 
-const mockAllergy = {
-  "gluten": false,
-  "dairy": false,
-  "egg": false,
-  "shellfish": false,
-  "nut": false,
-  "soy": false,
-  "fish": false,
-  "celery": false,
-  "mustard": false
-}
-
 const OrderPage = () => {
+  const {setReceiptID, orderData, setOrderData, allergyData} = useGlobalData();
+  const [menuData, setMenuData] = useState({});
   useEffect(() => {
-    FetchMenu(mockAllergy)
+    FetchMenu(allergyData)
       .then((data) => {
         setMenuData(data.data);
         console.log(JSON.stringify(data, null, 2));
       }).catch(()=>{
-        console.log("fetch menu error");
-      })
+      console.log("fetch menu error");
+    })
   }, []);
-  const {setReceiptID, orderData, setOrderData} = useGlobalData();
-  const [menuData, setMenuData] = useState({});
   const { top3, appetizer, main_dish, dessert, soldOut_menu, allergy_menu } = menuData;
   const navigate = useNavigate();
   const navigateAllergySelectPage = () => {
