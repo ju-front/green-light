@@ -8,6 +8,7 @@ import { useGlobalData } from "../../context/DataContext"; // Adjust the import 
 const IdCheck = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
+  const [userID, setUserID] = useState(null);
   const { setAllergyData } = useGlobalData();
 
   const handleLoginClick = (userID) => {
@@ -19,6 +20,7 @@ const IdCheck = () => {
         return;
       }
       setAllergyData(response);
+      setUserID(userID); // Set the user ID on successful login
       setAlertMessage("로그인 되었습니다.");
       setShowAlert(true);
     });
@@ -26,7 +28,7 @@ const IdCheck = () => {
 
   return (
     <div className='idCheckComponent'>
-      <SignInComponent onLoginClick={handleLoginClick} />
+      <SignInComponent onLoginClick={handleLoginClick} userID={userID} />
       {showAlert && <CustomAlert message={alertMessage} duration={3000} />}
     </div>
   );

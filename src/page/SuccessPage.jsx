@@ -12,12 +12,21 @@ import ShowReceipt from "../controller/api/receipt/ShowReceipt";
 const SuccessPage = () => {
   const { username, receiptID, setUsername } = useGlobalData();
   const [showPointStatus, setShowPointStatus] = useState(false);
-
-  const order = ShowReceipt(receiptID) || {
+  const [order, setOrder] = useState({
     receipt: {},
     total_price: 0,
     created_at: "",
-  };
+  });
+
+  useEffect(() => {
+    const fetchOrder = async () => {
+      const orderData = await ShowReceipt(receiptID);
+      setOrder(orderData || { receipt: {}, total_price: 0, created_at: "" });
+    };
+
+    fetchOrder();
+  }, [receiptID]);
+
   let userPoint = 13;
 
   useEffect(() => {
