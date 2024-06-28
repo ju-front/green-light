@@ -4,11 +4,13 @@ import "./Receipt.css";
 
 const Receipt = ({ order }) => {
   // order 객체의 receipt 데이터를 items 배열로 변환
-  const items = Object.keys(order.receipt).map((key) => ({
-    name: key,
-    quantity: order.receipt[key].quantity,
-    price: order.receipt[key].price,
-  }));
+  const items = order.receipt
+    ? Object.keys(order.receipt).map((key) => ({
+        name: key,
+        quantity: order.receipt[key].quantity,
+        price: order.receipt[key].price,
+      }))
+    : [];
 
   return (
     <div className='receipt'>
@@ -19,14 +21,18 @@ const Receipt = ({ order }) => {
       </div>
       <div className='receipt-body'>
         <ul>
-          {items.map((item, index) => (
-            <li key={index}>
-              <span>
-                {item.name} x {item.quantity}
-              </span>
-              <span>{item.price * item.quantity} 원</span>
-            </li>
-          ))}
+          {items.length > 0 ? (
+            items.map((item, index) => (
+              <li key={index}>
+                <span>
+                  {item.name} x {item.quantity}
+                </span>
+                <span>{item.price * item.quantity} 원</span>
+              </li>
+            ))
+          ) : (
+            <div>주문 내역이 없습니다.</div>
+          )}
         </ul>
         <div className='receipt-total'>
           <span>총합:</span>
@@ -47,7 +53,7 @@ Receipt.propTypes = {
         quantity: PropTypes.number.isRequired,
         price: PropTypes.number.isRequired,
       })
-    ).isRequired,
+    ),
     total_price: PropTypes.number.isRequired,
     created_at: PropTypes.string.isRequired,
   }).isRequired,
