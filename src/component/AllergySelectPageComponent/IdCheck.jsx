@@ -9,7 +9,7 @@ const IdCheck = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [userID, setUserID] = useState(null);
-  const { setAllergyData } = useGlobalData();
+  const { setAllergyData, setUsername } = useGlobalData();
 
   const handleLoginClick = (userID) => {
     SignIn(userID).then((response) => {
@@ -23,6 +23,8 @@ const IdCheck = () => {
       setUserID(userID); // Set the user ID on successful login
       setAlertMessage("로그인 되었습니다.");
       setShowAlert(true);
+      setUsername(userID);
+      console.log("setUsername:", userID);
     });
   };
 
