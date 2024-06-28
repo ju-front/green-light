@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import "./Receipt.css";
 
 const Receipt = ({ order }) => {
-  // order 객체의 receipt 데이터를 items 배열로 변환
   const items = order.receipt
     ? Object.keys(order.receipt).map((key) => ({
         name: key,
@@ -16,8 +15,8 @@ const Receipt = ({ order }) => {
     <div className='receipt'>
       <h2>주문 영수증</h2>
       <div className='receipt-header'>
-        <span>재형이네 순두부</span>
-        <span>{order.created_at}</span>
+        <span>재형이네순두부</span>
+        <span>{new Date(order.created_at).toLocaleString()}</span>
       </div>
       <div className='receipt-body'>
         <ul>
@@ -36,7 +35,7 @@ const Receipt = ({ order }) => {
         </ul>
         <div className='receipt-total'>
           <span>총합:</span>
-          <span>{order.total_price} 원</span>
+          <span>{order.total_price || 0} 원</span>
         </div>
       </div>
       <div className='receipt-footer'>
@@ -54,9 +53,17 @@ Receipt.propTypes = {
         price: PropTypes.number.isRequired,
       })
     ),
-    total_price: PropTypes.number.isRequired,
-    created_at: PropTypes.string.isRequired,
+    total_price: PropTypes.number,
+    created_at: PropTypes.string,
   }).isRequired,
+};
+
+Receipt.defaultProps = {
+  order: {
+    receipt: {},
+    total_price: 0,
+    created_at: "",
+  },
 };
 
 export default Receipt;
