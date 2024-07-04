@@ -1,0 +1,53 @@
+.signInComponent {
+  position: absolute;
+  top: 65px;
+  right: 60px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.signInBox {
+  display: flex;
+  align-items: center;
+}
+
+.custom-textfield {
+  border: 1px solid white;
+  color: white;
+  font-size: 15px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.loginButton {
+  color: white;
+  border: none;
+  width: 100px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: red;
+  text-align: center;
+}
+
+.loginButton:hover {
+  background-color: #d21e1e;
+}
+
+.loginButton:active {
+  background-color: #9a3c3c;
+  transform: scale(0.94);
+}
+
+.greetingMessage {
+  font-size: 25px;
+  color: rgb(181, 181, 181);
+  margin-right: 30px;
+  margin-top: 3px;
+  font-weight: bold;
+}

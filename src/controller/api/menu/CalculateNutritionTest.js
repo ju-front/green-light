@@ -3,13 +3,8 @@ import CalculateNutrition from './CalculateNutrition';
 
 function CalculateNutritionTest() {
   const [order, setOrder] = useState({
-    items: [
-      { name: "focaccia", quantity: 2 },
-      { name: "gelato", quantity: 1 },
-      { name: "panna_cotta", quantity: 3 },
-      { name: "bruschetta", quantity: 3 }
-    ],
-    total: 26000
+    bruschetta: 1,
+    focaccia: 2
   });
   const [totalNutrition, setTotalNutrition] = useState(null);
   const [error, setError] = useState(null);
@@ -21,7 +16,7 @@ function CalculateNutritionTest() {
       setTotalNutrition(null);
     } else {
       setError(null);
-      setTotalNutrition(response.totalNutrition);
+      setTotalNutrition(response);
     }
   };
 

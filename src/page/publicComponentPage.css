@@ -1,0 +1,32 @@
+/* publicComponentPage.css */
+.public-component-page {
+  padding: 20px;
+}
+
+.component-section {
+  margin-bottom: 40px;
+}
+
+.component-section h2 {
+  margin-bottom: 10px;
+}
+
+.component-section p {
+  margin-bottom: 20px;
+}
+
+.custom-alert {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.custom-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.custom-textfield {
+  margin-top: 10px;
+}

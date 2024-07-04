@@ -1,15 +1,49 @@
-import React from "react";
-import './NutrientAnalysisPage.css'
-import '../global.css'
+import React, {useEffect, useState} from 'react';
+import './NutrientAnalysisPage.css';
+import '../global.css';
+import {useNavigate} from "react-router-dom";
+import PeopleCounter from '../component/NutrientAnalysisPageComponent/PeopleCounter';
+import Nutrients from '../component/NutrientAnalysisPageComponent/Nutrients';
+import ActionButtons from '../component/NutrientAnalysisPageComponent/ActionButtons';
+import CalculateNutrition from "../controller/api/menu/CalculateNutrition";
+import {useGlobalData} from "../context/DataContext";
 
 const NutrientAnalysisPage = () => {
-  return(
+  const navigate = useNavigate();
+  const [nutrientData, setNutrientData] = useState({});
+  const {orderData, setOrderData} = useGlobalData();
+  const [peopleCount, setPeopleCount] = useState(1);
+
+  useEffect(() => {
+    CalculateNutrition(orderData.items)
+      .then((data)=>{
+        setNutrientData(data);
+        setOrderData({ items: {}, total_price: 0 });
+      })
+      .catch(()=>console.log("fetch error"));
+  }, []);
+
+  const handleClick = () => {
+    navigate("/success");
+  }
+
+  const handleBackClick = () => {
+    navigate("/order");
+  }
+
+  return (
     <div className="container">
       <div className="sub-container">
-        {/*{여기부터 태그를 작성해주세요}*/}
+        <div className="header-text">영양성분 확인해 보실래요?</div>
+        <PeopleCounter setPeopleCount={setPeopleCount} peopleCount={peopleCount} />
+        <Nutrients nutrientsData={nutrientData} peopleCount={peopleCount} />
+        <ActionButtons
+          handleClick={handleClick}
+          handleBackClick={handleBackClick}
+        />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default NutrientAnalysisPage;

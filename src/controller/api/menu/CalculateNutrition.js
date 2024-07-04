@@ -1,9 +1,9 @@
 import { supabase } from '../../supabaseClient';
 
-async function CalculateNutrition(order) {
+async function CalculateNutrition(orderData) {
   try {
     // 주문 항목의 메뉴 이름을 추출
-    const menuNames = order.items.map(item => item.name);
+    const menuNames = Object.keys(orderData);
 
     // NutritionTable에서 해당 메뉴 이름에 대한 영양 정보를 가져오기
     const { data: nutritionData, error: nutritionError } = await supabase
@@ -25,18 +25,18 @@ async function CalculateNutrition(order) {
       cholesterol: 0
     };
 
-    order.items.forEach(item => {
-      const nutrition = nutritionData.find(nutri => nutri.menu_name === item.name);
+    menuNames.forEach(name => {
+      const nutrition = nutritionData.find(nutri => nutri.menu_name === name);
       if (nutrition) {
-        totalNutrition.carbohydrate += nutrition.carbohydrate * item.quantity;
-        totalNutrition.protein += nutrition.protein * item.quantity;
-        totalNutrition.fat += nutrition.fat * item.quantity;
-        totalNutrition.sodium += nutrition.sodium * item.quantity;
-        totalNutrition.cholesterol += nutrition.cholesterol * item.quantity;
+        totalNutrition.carbohydrate += nutrition.carbohydrate * orderData[name];
+        totalNutrition.protein += nutrition.protein * orderData[name];
+        totalNutrition.fat += nutrition.fat * orderData[name];
+        totalNutrition.sodium += nutrition.sodium * orderData[name];
+        totalNutrition.cholesterol += nutrition.cholesterol * orderData[name];
       }
     });
 
-    return {totalNutrition };
+    return totalNutrition;
   } catch (error) {
     console.error('Error:', error);
     return { error: 'An error occurred during the nutrition calculation' };

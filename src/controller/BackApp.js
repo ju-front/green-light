@@ -4,7 +4,8 @@ import SignInTest from './api/auth/SignInTest';
 import SignUpTest from './api/auth/SignUpTest';
 import ReceiptSignInTest from './api/auth/ReceiptSignInTest';
 
-import CalculateNutritionTest from './api/menu/CalculateNutritionTest';
+import CalculateNutritionTest from './api/menu/CalculateNutritionTest'
+;
 import FetchMenuTest from './api/menu/FetchMenuTest';
 //import MarkAllergyOccurrenceTest from './api/menu/MarkAllergyOccurrenceTest';
 //import MarkSoldOutTest from './api/menu/MarkSoldOutTest';
@@ -15,14 +16,14 @@ import ShowReceiptTest from './api/receipt/ShowReceiptTest';
 function BackApp() {
   return (
     <div className="BackApp">
-      <SignInTest />
-      <SignUpTest />
-      <ReceiptSignInTest />
+      {/*<SignInTest /> */}
+      {/* <SignUpTest /> */}
+      { /* <ReceiptSignInTest /> */}
       
       <CalculateNutritionTest />
-      <FetchMenuTest />
+      {/* <FetchMenuTest /> */}
       
-      <CreateReceiptTest />
+      { /* <CreateReceiptTest /> */}
       <ShowReceiptTest />
       {/* <MarkAllergyOccurrenceTest /> */}
       {/* <MarkSoldOutTest /> */}
